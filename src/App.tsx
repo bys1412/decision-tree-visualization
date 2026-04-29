@@ -21,6 +21,7 @@ import {
 import { NodeType, TreeNode, CalculationLog as CalcLogType } from './types';
 import { INITIAL_TREE_DATA, calculateLayout, solveTree } from './treeUtils';
 import { useZoomPan } from './useZoomPan';
+import { PasswordGate } from './components/PasswordGate';
 
 export default function App() {
   const [nodes, setNodes] = useState<Record<string, TreeNode>>(INITIAL_TREE_DATA);
@@ -122,6 +123,7 @@ export default function App() {
   };
 
   return (
+    <PasswordGate>
     <div className="flex h-screen w-full bg-slate-50 flex-col text-slate-800 font-sans select-none overflow-hidden">
       {/* 顶部导航栏 */}
       <header className="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-30 shadow-sm">
@@ -480,5 +482,6 @@ export default function App() {
         </aside>
       </div>
     </div>
+    </PasswordGate>
   );
 }
